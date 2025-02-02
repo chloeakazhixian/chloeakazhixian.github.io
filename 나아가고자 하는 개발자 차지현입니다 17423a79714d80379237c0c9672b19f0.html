@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>나아가고자 하는 개발자 차지현입니다</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="17423a79-714d-8037-9237-c0c9672b19f0" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💭</span></div><h1 class="page-title">나아가고자 하는 개발자 차지현입니다</h1><p class="page-description"></p></header><div class="page-body"><p id="17423a79-714d-814c-834b-fab81d789a73" class="">
+</p><div id="17423a79-714d-814f-9d98-f57ad6b6923e" class="column-list"><div id="18123a79-714d-80a8-b650-e9899b07c25d" style="width:25%" class="column"><figure id="18123a79-714d-8082-a9a8-f182b77a6553" class="image"><a href="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2025-01-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_9.35.42.png"><img style="width:144px" src="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2025-01-20_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_9.35.42.png"/></a></figure><p id="18123a79-714d-80cf-b3df-e0c49cfc00d7" class="">
+</p></div><div id="17423a79-714d-811d-9180-dc4d6fdec88a" style="width:75%" class="column"><p id="17423a79-714d-8198-9f24-f17a72870dec" class="">책임감을 바탕으로 도전하는 개발자입니다. 문제를 해결할 때는 기술적인 부분에만 집중하는 것이 아니라, 그 해결책이 실제로 사용자와 팀에 미칠 영향을 항상 고민해왔습니다. </p><p id="17d23a79-714d-8044-af59-dbd118753469" class="">개발자의 중요한 역할은 단순히 코드를 작성하는 것에 그치지 않고, 그 코드가 실제 환경에서 어떻게 활용될지, 그리고 팀원들과 어떻게 협업하며 효과적으로 소통할지를 고려하는 것이라고 생각합니다.</p><p id="18123a79-714d-8060-b0f4-f9ebc97e3d50" class="">📩 <em>thisis_chloe@naver.com</em></p><p id="18123a79-714d-8017-8b5b-d3cdd9431272" class="">
+</p></div></div><h1 id="17423a79-714d-81ca-a330-fa5ae37d718f" class="">🔎 Profile</h1><figure id="17423a79-714d-81bd-afb7-c533aa68f4b7" class="image"><a href="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/Line_1_(1).png"><img style="width:703.125px" src="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/Line_1_(1).png"/></a></figure><div id="17423a79-714d-8127-b576-f6ea347f14f8" class="column-list"><div id="17423a79-714d-8148-a31c-d868c00d450c" style="width:50%" class="column"><h3 id="17423a79-714d-8145-94d5-f059acb7c924" class="">경력  <mark class="highlight-gray">(총 2년 9개월)</mark></h3><p id="17423a79-714d-815c-9e41-cd5b1558d748" class=""><strong>스마트스코어</strong>   <mark class="highlight-gray">2023.03 - 2023.9</mark></p><p id="17423a79-714d-813a-89c8-c769418141ee" class="">• 테이블오더 신규개발</p><p id="17423a79-714d-81b2-99a3-deb7c89549d7" class="">• 캐디의 관리자페이지 시스템 유지보수</p><p id="17423a79-714d-811a-afb2-e6e1a2a9ad6a" class=""><strong>원플랫</strong>   <mark class="highlight-gray">2021.5 - 2023.8</mark></p><p id="17d23a79-714d-8071-af78-f29bec31fa33" class="">• 와이즈에이아이 플랫폼  운영</p><p id="17423a79-714d-8157-ab23-c63446ade75b" class="">• 와이즈에이아이 관리자페이지 신규개발 및 운영</p><p id="17d23a79-714d-8033-8cea-ebb1704fc81d" class="">
+</p></div><div id="17423a79-714d-810d-a75e-cf5662350f82" style="width:50%" class="column"><h3 id="17423a79-714d-817b-aba7-ea959611c774" class="">외국어</h3><p id="17423a79-714d-8145-ac94-d4a44912ab00" class="">TOEIC 830(2020.05)</p><p id="17d23a79-714d-8017-b6e8-ea0ab2b44f9a" class="">HSK 6(2020.01)</p><p id="17423a79-714d-816a-944e-ca7561973b47" class="">
+</p><h3 id="17423a79-714d-814e-9e53-cc66de91e8d4" class="">기타</h3><p id="18123a79-714d-8054-a74f-e7f9a6960f35" class="">비트캠프 신촌 풀스택개발자 양성과정 수료</p><p id="17423a79-714d-8103-a0d9-f075ce1e7d10" class="">길림재경대학교 교환학생</p><p id="18123a79-714d-80e5-955a-ead086f56db6" class="">
+</p></div></div><h1 id="17423a79-714d-81ab-a7c9-de15b75d0135" class="">⚒️ Skills</h1><figure id="17423a79-714d-8197-bcb7-cdbf4dbe7913" class="image"><a href="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/Line_1_(1).png"><img style="width:703.125px" src="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/Line_1_(1).png"/></a></figure><h3 id="17d23a79-714d-805c-a91e-ebdfde217e2a" class="">Strong</h3><table id="17d23a79-714d-806b-b2cd-d7397a79d7c4" class="simple-table"><tbody><tr id="17d23a79-714d-80f7-b5ce-e199fc2c8e4c"><td id="HYDg" class="">JavaScript</td><td id="wMcA" class="" style="width:576px">ES6문법을 사용할수 있습니다.</td></tr><tr id="17d23a79-714d-80db-af97-c27ab527d9f6"><td id="HYDg" class="">Spring Boot</td><td id="wMcA" class="" style="width:576px">추상화된 내부 동작소스 원리를 파악하고 활용합니다.</td></tr><tr id="bdc2bcff-966f-4bf5-a024-d3f8e1d66fcd"><td id="HYDg" class="">MySQL</td><td id="wMcA" class="" style="width:576px">인덱싱과 실행 계획을 분석할수 있습니다.</td></tr><tr id="4bddba7e-9942-4c59-843a-ca178f5d0f91"><td id="HYDg" class="">JAVA</td><td id="wMcA" class="" style="width:576px">모던 자바 문법과 전략 패턴을 활용한 개발 경험이 있습니다.</td></tr><tr id="f900e335-8619-4489-a7d5-3ed473f0104a"><td id="HYDg" class="">Git</td><td id="wMcA" class="" style="width:576px">병합 문제상황에서 소스를 복구할 수있습니다.</td></tr></tbody></table><h3 id="17d23a79-714d-803b-b65d-e46b00e88942" class="">Knowledgeable</h3><table id="17d23a79-714d-8038-a9a6-e3c75197da5b" class="simple-table"><tbody><tr id="17d23a79-714d-80e0-8611-d7dd73c6a65d"><td id="zMGU" class="">PHP</td><td id="{MC_" class="" style="width:578px">비교적 간단한 오류를 처리한 경험이 있습니다.</td></tr><tr id="17d23a79-714d-80aa-a6fe-e03c08861366"><td id="zMGU" class="">ORACLE</td><td id="{MC_" class="" style="width:578px">MySql과의 차이점을 인지하고있습니다.</td></tr><tr id="17d23a79-714d-8090-bd19-de1fa7b05d7f"><td id="zMGU" class="">Vue.js</td><td id="{MC_" class="" style="width:578px">페이지 화면 개발 및 모듈화를 할수있습니다.</td></tr><tr id="17d23a79-714d-808f-ab40-d4480e717860"><td id="zMGU" class="">Docker</td><td id="{MC_" class="" style="width:578px">간단한 정적페이지의 컨테이너를 생성하고 배포한 경험이 있습니다.</td></tr></tbody></table><h1 id="17423a79-714d-8134-acab-fcc5b6021a4e" class=""><br/>👩🏻‍💻 Careers<br/></h1><figure id="17423a79-714d-81da-a28d-d92f7b4911d6" class="image"><a href="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/Line_1_(1).png"><img style="width:703.125px" src="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/Line_1_(1).png"/></a></figure><h3 id="17d23a79-714d-807a-848c-ce7db96a62e1" class=""><strong>1. </strong><strong><a href="https://www.smartscore.kr/golf/index.html?act=club">스마트스코어</a></strong><strong> 테이블오더(6개월/9명) - Full Stack</strong></h3><p id="17d23a79-714d-80e7-ac0c-e2fca782164d" class="">기간: 2024.03 - 2024.09</p><p id="17d23a79-714d-8066-8cfd-f048faf62fc7" class="">골프장 그늘집 테이블오더솔루션으로, 사용자 및 캐디의 메뉴주문화면, 점주의 주문확인 화면, 메뉴추가관리 화면으로 구성되어있습니다.</p><ul id="17d23a79-714d-805a-ac23-cf1dbbcbdd58" class="bulleted-list"><li style="list-style-type:disc">Draggable 및 Google Analytics 차트 컴포넌트 제작</li></ul><ul id="17d23a79-714d-80f6-97c6-c3505e9ca094" class="bulleted-list"><li style="list-style-type:disc">테이블오더 앱과 연동되는 데이터를 저장하는 관리자페이지 식음 메뉴 화면 개발</li></ul><ul id="17d23a79-714d-8052-86be-f10737c446ae" class="bulleted-list"><li style="list-style-type:disc">골프장 관리자페이지 오류 파악 및 유지보수</li></ul><ul id="17d23a79-714d-8081-aff0-db24ad0bd1da" class="bulleted-list"><li style="list-style-type:disc">기존 및 신규 그늘집 솔루션 운영 전환에 따른 데이터 쿼리 검토 및 수정</li></ul><p id="17d23a79-714d-80b9-b8f4-ccd731a7b8e1" class="">
+</p><h3 id="17d23a79-714d-80d6-81b1-e8a39977e75d" class="">2. <a href="https://www.wiseai.co.kr/service/page07.html">WiseAI</a>(2년/6명) -<strong> Full Stack</strong></h3><p id="17423a79-714d-813f-9913-cfdcb2bd3c99" class="">기간: 2021.05 - 2023.08</p><p id="17d23a79-714d-8063-a948-ec3622adb2e4" class="">병원 진료 예약에 특화된 서비스로, 고객과 통화 시 출력될 데이터를 관리하고 기록하는 부분을 주로 개발하였습니다.</p><p id="17d23a79-714d-80a1-91ef-e80bdfe5df29" class=""><strong>담당</strong></p><ul id="17d23a79-714d-80df-a497-cfb2b3121920" class="bulleted-list"><li style="list-style-type:disc">Retrofit을 이용한 양방향 통신 모듈 개발</li></ul><ul id="17d23a79-714d-805d-b992-d21a511c1229" class="bulleted-list"><li style="list-style-type:disc">코드 리팩토링, 함수형 프로그래밍화, REST API 구축</li></ul><ul id="17d23a79-714d-8055-872e-d48a0951e413" class="bulleted-list"><li style="list-style-type:disc">전략패턴을 사용해 신규 계약 병원의 회원가입 프로세스 확장</li></ul><ul id="17d23a79-714d-802c-9afa-ebdaba1dd47b" class="bulleted-list"><li style="list-style-type:disc">JPA N+1로 인한 성능저하를 개선</li></ul><ul id="17d23a79-714d-80f2-9333-c27caa303b68" class="bulleted-list"><li style="list-style-type:disc">Google Analytics 를 이용한 차트 컴포넌트 제작</li></ul><p id="17423a79-714d-818c-a244-cdcf9dd99324" class="">
+</p><h1 id="17423a79-714d-814e-91bb-e054b4a76d01" class="">💫 Articles</h1><figure id="17423a79-714d-8109-90fd-e6ce97118c62" class="image"><a href="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/Line_1_(1).png"><img style="width:703.125px" src="%E1%84%82%E1%85%A1%E1%84%8B%E1%85%A1%E1%84%80%E1%85%A1%E1%84%80%E1%85%A9%E1%84%8C%E1%85%A1%20%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%20%E1%84%8E%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%82%E1%85%B5%E1%84%83%E1%85%A1%2017423a79714d80379237c0c9672b19f0/Line_1_(1).png"/></a></figure><div id="17423a79-714d-815b-8164-f414db02309c" class="column-list"><div id="17423a79-714d-812b-b922-dda734cb7d91" style="width:50%" class="column"><ul id="17423a79-714d-81e8-8433-fb927d19da4e" class="bulleted-list"><li style="list-style-type:disc">스터디 및 트러블슈팅 블로그</li></ul></div><div id="17423a79-714d-8133-a118-f2bdb7cbcea7" style="width:50%" class="column"><p id="17423a79-714d-8166-82e6-f5736ce9d9be" class="">
+</p></div></div><figure id="17d23a79-714d-80b8-bbec-c0adf7000019"><a href="https://velog.io/@chloeakazhixian/%EC%86%8C%EC%8A%A4%EB%B3%80%EA%B2%BD-%ED%9B%84-%EB%B0%94%EB%A1%9C-%EC%84%9C%EB%B2%84%EC%97%90-%EB%B0%98%EC%98%81%EC%8B%9C%ED%82%A4%EA%B3%A0%EC%8B%B6%EC%96%B4%EC%9A%94" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">소스변경 후 바로 서버에 반영시키고싶어요</div><div class="bookmark-description">개발환경(로컬)에 도커 데스크탑을 설치하는것까지 마쳤습니다.이제는 개발환경에서 도커 명령어를 자유롭게 사용할수 있습니다.깃헙액션을 사용하기 전까지 저는 어떻게 프로젝트를 서버에 띄웠는지 먼저 설명드리고 싶습니다.실행 주체를 아래의 두 가지로 정의하겠습니다.로컬: 소스작</div></div><div class="bookmark-href"><img src="https://static.velog.io/favicons/apple-icon-152x152.png" class="icon bookmark-icon"/>https://velog.io/@chloeakazhixian/%EC%86%8C%EC%8A%A4%EB%B3%80%EA%B2%BD-%ED%9B%84-%EB%B0%94%EB%A1%9C-%EC%84%9C%EB%B2%84%EC%97%90-%EB%B0%98%EC%98%81%EC%8B%9C%ED%82%A4%EA%B3%A0%EC%8B%B6%EC%96%B4%EC%9A%94</div></div><img src="https://images.velog.io/velog.png" class="bookmark-image"/></a></figure><p id="17423a79-714d-8157-8421-c85b6b1c2a29" class="">
+</p><p id="17423a79-714d-8171-ab6a-ec148f012bce" class="">
+</p><p id="17423a79-714d-811b-8a29-e86447edba78" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
